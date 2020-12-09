@@ -8,14 +8,18 @@ import torch.nn as nn
 from torch.nn import functional as F
 
 
-class GeLU(nn.Module):
+class ActivationFn(nn.Module):
+    pass
+
+
+class GeLU(ActivationFn):
     """Component class to wrap F.gelu."""
 
     def forward(self, input):
         return F.gelu(input)
 
 
-class ReLU(nn.Module):
+class ReLU(ActivationFn):
     """Component class to wrap F.relu."""
 
     def forward(self, input):
